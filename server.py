@@ -6,7 +6,10 @@ import cv2
 app = Flask(__name__)
 
 # Enable CORS for all routes
-CORS(app, origins="http://localhost:5173")
+CORS(app, origins=[
+    "http://localhost:5173",
+    "https://air-canvas-frontend.vercel.app"
+])
 
 process = None  # global to hold the air_canvas process
 video_capture = None  # global to hold the video capture object
